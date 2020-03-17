@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="iFH4SK" name="Trio2" projectType="audioplug" jucerVersion="5.4.3"
+              companyName="Matthias Pueski" pluginCharacteristicsValue="pluginIsSynth,pluginWantsMidiIn">
+  <MAINGROUP id="Y8wXm3" name="Trio2">
+    <GROUP id="{CA057464-391B-9A13-A1D8-FA2721D962F8}" name="Source">
+      <FILE id="zVRWCj" name="ADSR.cpp" compile="1" resource="0" file="Source/ADSR.cpp"/>
+      <FILE id="Pbhvbg" name="ADSR.h" compile="0" resource="0" file="Source/ADSR.h"/>
+      <FILE id="ZwQSne" name="BasicDelayLine.cpp" compile="1" resource="0"
+            file="Source/BasicDelayLine.cpp"/>
+      <FILE id="d5ZqXs" name="BasicDelayLine.h" compile="0" resource="0"
+            file="Source/BasicDelayLine.h"/>
+      <FILE id="g7Th04" name="BrowserPanel.cpp" compile="1" resource="0"
+            file="Source/BrowserPanel.cpp"/>
+      <FILE id="FqpEhi" name="BrowserPanel.h" compile="0" resource="0" file="Source/BrowserPanel.h"/>
+      <FILE id="ypPguO" name="ControllerConfig.cpp" compile="1" resource="0"
+            file="Source/ControllerConfig.cpp"/>
+      <FILE id="emzaSq" name="ControllerConfig.h" compile="0" resource="0"
+            file="Source/ControllerConfig.h"/>
+      <FILE id="p3zaBl" name="ControllerEditor.cpp" compile="1" resource="0"
+            file="Source/ControllerEditor.cpp"/>
+      <FILE id="v3oUd3" name="ControllerEditor.h" compile="0" resource="0"
+            file="Source/ControllerEditor.h"/>
+      <FILE id="Rkp5fJ" name="Distortion.cpp" compile="1" resource="0" file="Source/Distortion.cpp"/>
+      <FILE id="CJ4cv5" name="Distortion.h" compile="0" resource="0" file="Source/Distortion.h"/>
+      <FILE id="IBa4G3" name="Filter.cpp" compile="1" resource="0" file="Source/Filter.cpp"/>
+      <FILE id="GQ9osm" name="Filter.h" compile="0" resource="0" file="Source/Filter.h"/>
+      <FILE id="SPydWD" name="FXPanel.cpp" compile="1" resource="0" file="Source/FXPanel.cpp"/>
+      <FILE id="pa0uB8" name="FXPanel.h" compile="0" resource="0" file="Source/FXPanel.h"/>
+      <FILE id="cbKbdo" name="HighPassFilter.cpp" compile="1" resource="0"
+            file="Source/HighPassFilter.cpp"/>
+      <FILE id="QkgMXa" name="HighPassFilter.h" compile="0" resource="0"
+            file="Source/HighPassFilter.h"/>
+      <FILE id="Ymvivn" name="LowPassFilter.cpp" compile="1" resource="0"
+            file="Source/LowPassFilter.cpp"/>
+      <FILE id="SYmsTR" name="LowPassFilter.h" compile="0" resource="0" file="Source/LowPassFilter.h"/>
+      <FILE id="JaPKbg" name="MainWindow.cpp" compile="1" resource="0" file="Source/MainWindow.cpp"/>
+      <FILE id="busdfH" name="MainWindow.h" compile="0" resource="0" file="Source/MainWindow.h"/>
+      <FILE id="En9bMS" name="Model.cpp" compile="1" resource="0" file="Source/Model.cpp"/>
+      <FILE id="kP1LuS" name="Model.h" compile="0" resource="0" file="Source/Model.h"/>
+      <FILE id="QgDg0B" name="ModMatrix.cpp" compile="1" resource="0" file="Source/ModMatrix.cpp"/>
+      <FILE id="n4gwBp" name="ModMatrix.h" compile="0" resource="0" file="Source/ModMatrix.h"/>
+      <FILE id="f3U3GC" name="ModMatrixConfig.cpp" compile="1" resource="0"
+            file="Source/ModMatrixConfig.cpp"/>
+      <FILE id="FiLr9z" name="ModMatrixConfig.h" compile="0" resource="0"
+            file="Source/ModMatrixConfig.h"/>
+      <FILE id="zN6J7u" name="ModPanel.cpp" compile="1" resource="0" file="Source/ModPanel.cpp"/>
+      <FILE id="JGFPHM" name="ModPanel.h" compile="0" resource="0" file="Source/ModPanel.h"/>
+      <FILE id="FUfjWA" name="ModSlot.cpp" compile="1" resource="0" file="Source/ModSlot.cpp"/>
+      <FILE id="LHHMIa" name="ModSlot.h" compile="0" resource="0" file="Source/ModSlot.h"/>
+      <FILE id="hW27RH" name="ModSlotConfig.cpp" compile="1" resource="0"
+            file="Source/ModSlotConfig.cpp"/>
+      <FILE id="MTnmrO" name="ModSlotConfig.h" compile="0" resource="0" file="Source/ModSlotConfig.h"/>
+      <FILE id="rs6O14" name="ModTarget.cpp" compile="1" resource="0" file="Source/ModTarget.cpp"/>
+      <FILE id="PbU3zt" name="ModTarget.h" compile="0" resource="0" file="Source/ModTarget.h"/>
+      <FILE id="y6qcy8" name="Modulation.cpp" compile="1" resource="0" file="Source/Modulation.cpp"/>
+      <FILE id="kIqyVA" name="Modulation.h" compile="0" resource="0" file="Source/Modulation.h"/>
+      <FILE id="k82SVv" name="Modulator.h" compile="0" resource="0" file="Source/Modulator.h"/>
+      <FILE id="LTsPBB" name="MonoEffect.h" compile="0" resource="0" file="Source/MonoEffect.h"/>
+      <FILE id="M6rE1D" name="MultimodeFilter.cpp" compile="1" resource="0"
+            file="Source/MultimodeFilter.cpp"/>
+      <FILE id="HasCBq" name="MultimodeFilter.h" compile="0" resource="0"
+            file="Source/MultimodeFilter.h"/>
+      <FILE id="J7Mc98" name="MultimodeOscillator.cpp" compile="1" resource="0"
+            file="Source/MultimodeOscillator.cpp"/>
+      <FILE id="Ekg7pW" name="MultimodeOscillator.h" compile="0" resource="0"
+            file="Source/MultimodeOscillator.h"/>
+      <FILE id="bmN4JE" name="Note.cpp" compile="1" resource="0" file="Source/Note.cpp"/>
+      <FILE id="WWx8ab" name="Note.h" compile="0" resource="0" file="Source/Note.h"/>
+      <FILE id="t2BY0W" name="Oszillator.cpp" compile="1" resource="0" file="Source/Oszillator.cpp"/>
+      <FILE id="agcewb" name="Oszillator.h" compile="0" resource="0" file="Source/Oszillator.h"/>
+      <FILE id="zGZWa2" name="ParameterSlider.h" compile="0" resource="0"
+            file="Source/ParameterSlider.h"/>
+      <FILE id="qWbBlj" name="PatchBrowserComponent.cpp" compile="1" resource="0"
+            file="Source/PatchBrowserComponent.cpp"/>
+      <FILE id="ffnEft" name="PatchBrowserComponent.h" compile="0" resource="0"
+            file="Source/PatchBrowserComponent.h"/>
+      <FILE id="Xpcgpc" name="PresetDialog.cpp" compile="1" resource="0"
+            file="Source/PresetDialog.cpp"/>
+      <FILE id="xzyGlC" name="PresetDialog.h" compile="0" resource="0" file="Source/PresetDialog.h"/>
+      <FILE id="VW2eMP" name="PresetWindow.cpp" compile="1" resource="0"
+            file="Source/PresetWindow.cpp"/>
+      <FILE id="v4q2LV" name="PresetWindow.h" compile="0" resource="0" file="Source/PresetWindow.h"/>
+      <FILE id="Rs5278" name="Pulse.cpp" compile="1" resource="0" file="Source/Pulse.cpp"/>
+      <FILE id="yV3aoR" name="Pulse.h" compile="0" resource="0" file="Source/Pulse.h"/>
+      <FILE id="yR7Iek" name="Sawtooth.cpp" compile="1" resource="0" file="Source/Sawtooth.cpp"/>
+      <FILE id="fIlIP4" name="Sawtooth.h" compile="0" resource="0" file="Source/Sawtooth.h"/>
+      <FILE id="GBvxhZ" name="Sequencer.cpp" compile="1" resource="0" file="Source/Sequencer.cpp"/>
+      <FILE id="YhickT" name="Sequencer.h" compile="0" resource="0" file="Source/Sequencer.h"/>
+      <FILE id="sdQbw4" name="SettingsPanel.cpp" compile="1" resource="0"
+            file="Source/SettingsPanel.cpp"/>
+      <FILE id="CmCx0U" name="SettingsPanel.h" compile="0" resource="0" file="Source/SettingsPanel.h"/>
+      <FILE id="aky1tc" name="Sine.cpp" compile="1" resource="0" file="Source/Sine.cpp"/>
+      <FILE id="gNrg9C" name="Sine.h" compile="0" resource="0" file="Source/Sine.h"/>
+      <FILE id="DrDQun" name="StereoDelay.cpp" compile="1" resource="0" file="Source/StereoDelay.cpp"/>
+      <FILE id="JMiDtO" name="StereoDelay.h" compile="0" resource="0" file="Source/StereoDelay.h"/>
+      <FILE id="UNq85L" name="StereoEffect.h" compile="0" resource="0" file="Source/StereoEffect.h"/>
+      <FILE id="Pzg0Q7" name="StereoReverb.cpp" compile="1" resource="0"
+            file="Source/StereoReverb.cpp"/>
+      <FILE id="QhwNN1" name="StereoReverb.h" compile="0" resource="0" file="Source/StereoReverb.h"/>
+      <FILE id="E16cjC" name="TrioLookAndFeel.cpp" compile="1" resource="0"
+            file="Source/TrioLookAndFeel.cpp"/>
+      <FILE id="DEyfE1" name="TrioLookAndFeel.h" compile="0" resource="0"
+            file="Source/TrioLookAndFeel.h"/>
+      <FILE id="cisRp3" name="TrioSlider.cpp" compile="1" resource="0" file="Source/TrioSlider.cpp"/>
+      <FILE id="YMURz1" name="TrioSlider.h" compile="0" resource="0" file="Source/TrioSlider.h"/>
+      <FILE id="IgXf3s" name="TrioSynth.cpp" compile="1" resource="0" file="Source/TrioSynth.cpp"/>
+      <FILE id="S2ePBy" name="TrioSynth.h" compile="0" resource="0" file="Source/TrioSynth.h"/>
+      <FILE id="P7baIO" name="Voice.cpp" compile="1" resource="0" file="Source/Voice.cpp"/>
+      <FILE id="JlIVYG" name="Voice.h" compile="0" resource="0" file="Source/Voice.h"/>
+      <FILE id="sN04db" name="WhiteNoise.cpp" compile="1" resource="0" file="Source/WhiteNoise.cpp"/>
+      <FILE id="VyjmW3" name="WhiteNoise.h" compile="0" resource="0" file="Source/WhiteNoise.h"/>
+      <FILE id="FkfjjW" name="PluginProcessor.cpp" compile="1" resource="0"
+            file="Source/PluginProcessor.cpp"/>
+      <FILE id="Fd0MLC" name="PluginProcessor.h" compile="0" resource="0"
+            file="Source/PluginProcessor.h"/>
+      <FILE id="iClz3P" name="PluginEditor.cpp" compile="1" resource="0"
+            file="Source/PluginEditor.cpp"/>
+      <FILE id="co2aIe" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+    </GROUP>
+    <FILE id="qsc6mU" name="browser_panel.png" compile="0" resource="1"
+          file="browser_panel.png"/>
+    <FILE id="LYnqqd" name="fx_panel.png" compile="0" resource="1" file="fx_panel.png"/>
+    <FILE id="GrswJm" name="Knob_32.png" compile="0" resource="1" file="Knob_32.png"/>
+    <FILE id="QtpZ4m" name="Knob_48.png" compile="0" resource="1" file="Knob_48.png"/>
+    <FILE id="XF5yZZ" name="Knob_64.png" compile="0" resource="1" file="Knob_64.png"/>
+    <FILE id="Axfrmc" name="Knob_128.png" compile="0" resource="1" file="Knob_128.png"/>
+    <FILE id="PUo5AB" name="mod_panel.png" compile="0" resource="1" file="mod_panel.png"/>
+    <FILE id="OI14bo" name="oscillator_noise_48.png" compile="0" resource="1"
+          file="oscillator_noise_48.png"/>
+    <FILE id="rTcTm2" name="oscillator_saw_48.png" compile="0" resource="1"
+          file="oscillator_saw_48.png"/>
+    <FILE id="Iaur7i" name="oscillator_sine_48.png" compile="0" resource="1"
+          file="oscillator_sine_48.png"/>
+    <FILE id="joQLPv" name="oscillator_square_48.png" compile="0" resource="1"
+          file="oscillator_square_48.png"/>
+    <FILE id="Sv6m4u" name="settings_panel.png" compile="0" resource="1"
+          file="settings_panel.png"/>
+    <FILE id="EN0rZx" name="sizehelper.png" compile="0" resource="1" file="sizehelper.png"/>
+    <FILE id="uWbfvu" name="trio.png" compile="0" resource="1" file="trio.png"/>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2017 targetFolder="Builds/VisualStudio2017">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_plugin_client" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2017>
+    <ANDROIDSTUDIO targetFolder="Builds/Android">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_opengl"/>
+        <MODULEPATH id="juce_gui_extra"/>
+        <MODULEPATH id="juce_gui_basics"/>
+        <MODULEPATH id="juce_graphics"/>
+        <MODULEPATH id="juce_events"/>
+        <MODULEPATH id="juce_data_structures"/>
+        <MODULEPATH id="juce_cryptography"/>
+        <MODULEPATH id="juce_core"/>
+        <MODULEPATH id="juce_audio_utils"/>
+        <MODULEPATH id="juce_audio_processors"/>
+        <MODULEPATH id="juce_audio_plugin_client"/>
+        <MODULEPATH id="juce_audio_formats"/>
+        <MODULEPATH id="juce_audio_devices"/>
+        <MODULEPATH id="juce_audio_basics"/>
+      </MODULEPATHS>
+    </ANDROIDSTUDIO>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_plugin_client" showAllCode="1" useLocalCopy="0"
+            useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <WINDOWS/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_VST3_CAN_REPLACE_VST2="0" JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+</JUCERPROJECT>
