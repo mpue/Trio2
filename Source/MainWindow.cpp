@@ -205,7 +205,7 @@ MainWindow::MainWindow (TrioAudioProcessor* p)
 
     filterAttackSlider.reset (new Slider ("filterAttackSlider"));
     addAndMakeVisible (filterAttackSlider.get());
-    filterAttackSlider->setRange (0, 5, 0.1);
+    filterAttackSlider->setRange (0, 10, 0.1);
     filterAttackSlider->setSliderStyle (Slider::RotaryVerticalDrag);
     filterAttackSlider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     filterAttackSlider->setColour (Slider::thumbColourId, Colour (0xffff7900));
@@ -216,7 +216,7 @@ MainWindow::MainWindow (TrioAudioProcessor* p)
 
     filterDecaySlider.reset (new Slider ("filterDecaySlider"));
     addAndMakeVisible (filterDecaySlider.get());
-    filterDecaySlider->setRange (0, 5, 0.1);
+    filterDecaySlider->setRange (0, 10, 0.1);
     filterDecaySlider->setSliderStyle (Slider::RotaryVerticalDrag);
     filterDecaySlider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     filterDecaySlider->setColour (Slider::rotarySliderOutlineColourId, Colour (0x66fff8f8));
@@ -236,7 +236,7 @@ MainWindow::MainWindow (TrioAudioProcessor* p)
 
     filterReleaseSlider.reset (new Slider ("filterReleaseSlider"));
     addAndMakeVisible (filterReleaseSlider.get());
-    filterReleaseSlider->setRange (0, 5, 0.1);
+    filterReleaseSlider->setRange (0, 10, 0.1);
     filterReleaseSlider->setSliderStyle (Slider::RotaryVerticalDrag);
     filterReleaseSlider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     filterReleaseSlider->setColour (Slider::rotarySliderOutlineColourId, Colour (0x66fff8f8));
@@ -246,7 +246,7 @@ MainWindow::MainWindow (TrioAudioProcessor* p)
 
     ampAttackSlider.reset (new Slider ("ampAttackSlider"));
     addAndMakeVisible (ampAttackSlider.get());
-    ampAttackSlider->setRange (0, 5, 0.1);
+    ampAttackSlider->setRange (0, 10, 0.1);
     ampAttackSlider->setSliderStyle (Slider::RotaryVerticalDrag);
     ampAttackSlider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     ampAttackSlider->setColour (Slider::rotarySliderOutlineColourId, Colour (0x66fff8f8));
@@ -256,7 +256,7 @@ MainWindow::MainWindow (TrioAudioProcessor* p)
 
     ampDecaySlider.reset (new Slider ("ampDecaySlider"));
     addAndMakeVisible (ampDecaySlider.get());
-    ampDecaySlider->setRange (0, 5, 0.1);
+    ampDecaySlider->setRange (0, 10, 0.1);
     ampDecaySlider->setSliderStyle (Slider::RotaryVerticalDrag);
     ampDecaySlider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     ampDecaySlider->setColour (Slider::rotarySliderOutlineColourId, Colour (0x66fff8f8));
@@ -276,7 +276,7 @@ MainWindow::MainWindow (TrioAudioProcessor* p)
 
     ampReleaseSlider.reset (new Slider ("ampReleaseSlider"));
     addAndMakeVisible (ampReleaseSlider.get());
-    ampReleaseSlider->setRange (0, 5, 0.1);
+    ampReleaseSlider->setRange (0, 10, 0.1);
     ampReleaseSlider->setSliderStyle (Slider::RotaryVerticalDrag);
     ampReleaseSlider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
     ampReleaseSlider->setColour (Slider::rotarySliderOutlineColourId, Colour (0x66fff8f8));
@@ -1058,7 +1058,7 @@ MainWindow::MainWindow (TrioAudioProcessor* p)
     addChildComponent(fxPanel);
     addChildComponent(presetPanel);
     addChildComponent(browserPanel);
-    addChildComponent(modPanel);
+    addChildComponent(modPanel);	
 	addChildComponent(settingsPanel);
 
     mainButton->toFront(false);
@@ -1618,7 +1618,12 @@ void MainWindow::comboBoxChanged(ComboBox* comboBoxThatHasChanged)
 	if (comboBoxThatHasChanged == presetCombo.get())
 	{
 		//[UserComboBoxCode_presetCombo] -- add your combo box handling code here..
+		for (int j = 0; j < processor->getModMatrix()->getModulations().size(); j++) {
+			for (int i = 0; i < processor->getModMatrix()->getModulations().at(j)->getTargets().size(); i++) {
+				processor->getModMatrix()->getModulations().at(j)->getTargets()[i]->setModAmount(0);
+			}
 
+		}
 
 		try {
 			String appDataPath = File::getSpecialLocation(File::userApplicationDataDirectory).getFullPathName();
@@ -1753,14 +1758,14 @@ void MainWindow::buttonClicked (Button* buttonThatWasClicked)
 
             modMatrix.addChild(slotConfigValue, -1, nullptr);
 
-
-
         }
 
         ScopedPointer<XmlElement> xml (processor->getValueTreeState()->state.createXml());
         presetPanel->setData(xml);
 
+		toggleView(MAIN);
         animator->fadeIn(presetPanel, 100);
+
 
         // presetPanel->setVisible(true);
 
@@ -2326,12 +2331,12 @@ BEGIN_JUCER_METADATA
           needsCallback="1"/>
   <SLIDER name="filterAttackSlider" id="dd143499d0f6a2f0" memberName="filterAttackSlider"
           virtualName="" explicitFocusOrder="0" pos="613 96 64 64" thumbcol="ffff7900"
-          rotaryslideroutline="66fff8f8" min="0.0" max="5.0" int="0.1"
+          rotaryslideroutline="66fff8f8" min="0.0" max="10.0" int="0.1"
           style="RotaryVerticalDrag" textBoxPos="NoTextBox" textBoxEditable="1"
           textBoxWidth="80" textBoxHeight="20" skewFactor="1.0" needsCallback="1"/>
   <SLIDER name="filterDecaySlider" id="33363d9ec7716419" memberName="filterDecaySlider"
           virtualName="" explicitFocusOrder="0" pos="681 96 64 64" rotaryslideroutline="66fff8f8"
-          min="0.0" max="5.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
+          min="0.0" max="10.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="filterSustainSlider" id="221683b72a922f05" memberName="filterSustainSlider"
@@ -2341,17 +2346,17 @@ BEGIN_JUCER_METADATA
           needsCallback="1"/>
   <SLIDER name="filterReleaseSlider" id="7c537539090ea5d7" memberName="filterReleaseSlider"
           virtualName="" explicitFocusOrder="0" pos="819 96 64 64" rotaryslideroutline="66fff8f8"
-          min="0.0" max="5.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
+          min="0.0" max="10.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="ampAttackSlider" id="d39e583f4c75014f" memberName="ampAttackSlider"
           virtualName="" explicitFocusOrder="0" pos="613 256 64 64" rotaryslideroutline="66fff8f8"
-          min="0.0" max="5.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
+          min="0.0" max="10.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="ampDecaySlider" id="792535f3bc392ff8" memberName="ampDecaySlider"
           virtualName="" explicitFocusOrder="0" pos="681 256 64 64" rotaryslideroutline="66fff8f8"
-          min="0.0" max="5.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
+          min="0.0" max="10.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="ampSustainSlider" id="427fd5158260d560" memberName="ampSustainSlider"
@@ -2361,7 +2366,7 @@ BEGIN_JUCER_METADATA
           needsCallback="1"/>
   <SLIDER name="ampReleaseSlider" id="d914be54075f55e0" memberName="ampReleaseSlider"
           virtualName="" explicitFocusOrder="0" pos="819 256 64 64" rotaryslideroutline="66fff8f8"
-          min="0.0" max="5.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
+          min="0.0" max="10.0" int="0.1" style="RotaryVerticalDrag" textBoxPos="NoTextBox"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="ampVolSlider" id="8a583b1da0600bb3" memberName="ampVolSlider"

@@ -221,7 +221,8 @@ void ModSlot::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
         //[UserComboBoxCode_sourceCombo] -- add your combo box handling code here..
 
         if (matrix->getModulations().size() > 0) {
-            if (sourceCombo->getSelectedId() == 1) {
+            					
+			if (sourceCombo->getSelectedId() == 1) {
                 matrix->getModulations().at(index)->setModulator(matrix->getDummy());
             }
             // LFO 1
@@ -253,6 +254,13 @@ void ModSlot::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
     else if (comboBoxThatHasChanged == targetCombo1.get())
     {
         //[UserComboBoxCode_targetCombo1] -- add your combo box handling code here..
+
+		for (int i = 0; i < matrix->getModulations().at(index)->getTargets().size(); i++) {
+			matrix->getModulations().at(index)->getTargets()[i]->setModAmount(0);
+		}
+
+		config->setAmount1(0);
+
 
         // Filter envelope
         if (targetCombo1->getSelectedId() == 2) {
@@ -373,8 +381,10 @@ void ModSlot::buttonClicked (Button* buttonThatWasClicked)
         this->slotEnabled = enableButton->getToggleState();
 		config->setEnabled(this->slotEnabled);
 
-		for each (Modulation* m in matrix->getModulations())
+		for(int i = 0; i < matrix->getModulations().size();i++)
+		//for each (Modulation* m in matrix->getModulations())
 		{
+		    Modulation* m = matrix->getModulations().at(i);
 			if (m->getIndex() == index) {
 				this->config->setEnabled(this->slotEnabled);
 				matrix->getModulations().at(index)->setEnabled(this->slotEnabled);

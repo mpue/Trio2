@@ -20,11 +20,12 @@ void TrioSlider::mouseDown(const MouseEvent &e) {
         PopupMenu m;
         m.addItem(1, "MIDI learn");
         
-        const int result = m.show();
-        
+        //const int result = m.show();
+        /*
         if (result == 1) {
             
         }
+         */
         
     }
 }

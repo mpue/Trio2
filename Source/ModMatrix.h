@@ -60,7 +60,7 @@ private:
     
     double sampleRate;
     Model* model;
-	ModMatrixConfig* config;
+	ModMatrixConfig* config = nullptr;
 	DummyModulator* dummy;
 };
 

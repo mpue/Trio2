@@ -37,10 +37,13 @@ public:
 
 private:
     
-    ScopedPointer<LowPassFilter> lowPassLeft;
+    ScopedPointer<LowPassFilter> lowPassLeftStage1;
+    ScopedPointer<LowPassFilter> lowPassRightStage1;
+
+	ScopedPointer<LowPassFilter> lowPassLeftStage2;
+	ScopedPointer<LowPassFilter> lowPassRightStage2;
+
     ScopedPointer<HighPassFilter> highPassLeft;
-    
-    ScopedPointer<LowPassFilter> lowPassRight;
     ScopedPointer<HighPassFilter> highPassRight;
     
     Mode mode;

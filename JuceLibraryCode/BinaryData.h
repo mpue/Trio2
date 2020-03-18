@@ -9,25 +9,25 @@
 namespace BinaryData
 {
     extern const char*   browser_panel_png;
-    const int            browser_panel_pngSize = 24931;
+    const int            browser_panel_pngSize = 15040;
 
     extern const char*   fx_panel_png;
-    const int            fx_panel_pngSize = 72148;
+    const int            fx_panel_pngSize = 62240;
 
     extern const char*   Knob_32_png;
-    const int            Knob_32_pngSize = 131264;
+    const int            Knob_32_pngSize = 143093;
 
     extern const char*   Knob_48_png;
-    const int            Knob_48_pngSize = 282566;
+    const int            Knob_48_pngSize = 309651;
 
     extern const char*   Knob_64_png;
-    const int            Knob_64_pngSize = 461008;
+    const int            Knob_64_pngSize = 507673;
 
     extern const char*   Knob_128_png;
-    const int            Knob_128_pngSize = 1703576;
+    const int            Knob_128_pngSize = 1847656;
 
     extern const char*   mod_panel_png;
-    const int            mod_panel_pngSize = 24931;
+    const int            mod_panel_pngSize = 15032;
 
     extern const char*   oscillator_noise_48_png;
     const int            oscillator_noise_48_pngSize = 17465;
@@ -42,13 +42,13 @@ namespace BinaryData
     const int            oscillator_square_48_pngSize = 17545;
 
     extern const char*   settings_panel_png;
-    const int            settings_panel_pngSize = 25450;
+    const int            settings_panel_pngSize = 15061;
 
     extern const char*   sizehelper_png;
     const int            sizehelper_pngSize = 19686;
 
     extern const char*   trio_png;
-    const int            trio_pngSize = 20281;
+    const int            trio_pngSize = 17131;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
     const int namedResourceListSize = 14;

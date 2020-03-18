@@ -190,6 +190,15 @@ ModMatrixConfig* ModMatrix::getConfiguration()
 
 void ModMatrix::createDefaultConfig()
 {
+	if (config != nullptr) {
+		delete config;
+
+		for (int i = 0; i < modulations.size(); i++) {
+			modulations.at(i)->setEnabled(false);
+		}
+
+	}
+
 	ModMatrixConfig* mmc = new ModMatrixConfig();
 
 	for (int i = 0; i < 6;i++) {

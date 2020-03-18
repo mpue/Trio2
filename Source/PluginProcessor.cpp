@@ -19,6 +19,8 @@
 
 using namespace std;
 
+#define M_PI 3.1415927
+
 //==============================================================================
 TrioAudioProcessor::TrioAudioProcessor() : AudioProcessor(BusesProperties()
 #if ! JucePlugin_IsMidiEffect
@@ -81,10 +83,10 @@ TrioAudioProcessor::TrioAudioProcessor() : AudioProcessor(BusesProperties()
     registeredParams.push_back(parameters->createAndAddParameter("lfo1amount", "LFO 1 Mod Amount", String(), NormalisableRange<float>(0.0f,10.0f), 0.0f, nullptr, nullptr));
     registeredParams.push_back(parameters->createAndAddParameter("lfo2amount", "LFO 2 Mod AMount", String(), NormalisableRange<float>(0.0f,10.0f), 0.0f, nullptr, nullptr));
     
-    registeredParams.push_back(parameters->createAndAddParameter("mod1_attack", "Env 1 attack", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
-    registeredParams.push_back(parameters->createAndAddParameter("mod1_decay", "Env 1 decay", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
+    registeredParams.push_back(parameters->createAndAddParameter("mod1_attack", "Env 1 attack", String(), NormalisableRange<float>(0.0f,10.0f), 0.0f, nullptr, nullptr));
+    registeredParams.push_back(parameters->createAndAddParameter("mod1_decay", "Env 1 decay", String(), NormalisableRange<float>(0.0f,10.0f), 0.0f, nullptr, nullptr));
     registeredParams.push_back(parameters->createAndAddParameter("mod1_sustain", "Env 1 sustain", String(), NormalisableRange<float>(0.0f,1.0f), 0.0f, nullptr, nullptr));
-    registeredParams.push_back(parameters->createAndAddParameter("mod1_release", "Env 1 release", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
+    registeredParams.push_back(parameters->createAndAddParameter("mod1_release", "Env 1 release", String(), NormalisableRange<float>(0.0f,10.0f), 0.0f, nullptr, nullptr));
     
     registeredParams.push_back(parameters->createAndAddParameter("mod2_attack", "Env 2 attack", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
     registeredParams.push_back(parameters->createAndAddParameter("mod2_decay", "Env 2 decay", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
@@ -96,10 +98,10 @@ TrioAudioProcessor::TrioAudioProcessor() : AudioProcessor(BusesProperties()
     registeredParams.push_back(parameters->createAndAddParameter("mod3_sustain", "Env 3 sustain", String(), NormalisableRange<float>(0.0f,1.0f), 0.0f, nullptr, nullptr));
     registeredParams.push_back(parameters->createAndAddParameter("mod3_release", "Env 3 release", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
     
-    registeredParams.push_back(parameters->createAndAddParameter("ampattack", "Amp attack", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
-    registeredParams.push_back(parameters->createAndAddParameter("ampdecay", "Amp decay", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
+    registeredParams.push_back(parameters->createAndAddParameter("ampattack", "Amp attack", String(), NormalisableRange<float>(0.0f,10.0f), 0.0f, nullptr, nullptr));
+    registeredParams.push_back(parameters->createAndAddParameter("ampdecay", "Amp decay", String(), NormalisableRange<float>(0.0f,10.0f), 0.0f, nullptr, nullptr));
     registeredParams.push_back(parameters->createAndAddParameter("ampsustain", "Amp sustain", String(), NormalisableRange<float>(0.0f,1.0f), 0.0f, nullptr, nullptr));
-    registeredParams.push_back(parameters->createAndAddParameter("amprelease", "Amp release", String(), NormalisableRange<float>(0.0f,5.0f), 0.0f, nullptr, nullptr));
+    registeredParams.push_back(parameters->createAndAddParameter("amprelease", "Amp release", String(), NormalisableRange<float>(0.0f,10.0f), 0.0f, nullptr, nullptr));
     
     registeredParams.push_back(parameters->createAndAddParameter("fxreverb_enabled", "Reverb enabled", String(), NormalisableRange<float>(0.0f,1.0f), 0.0f, nullptr, nullptr));
     registeredParams.push_back(parameters->createAndAddParameter("fxreverb_damping", "Reverb Damping", String(), NormalisableRange<float>(0.0f,1.0f), 0.0f, nullptr, nullptr));
@@ -698,8 +700,6 @@ void TrioAudioProcessor::processBlock (AudioBuffer<float>& buffer, MidiBuffer& m
     this->magnitudeLeft = buffer.getMagnitude(0, 0, buffer.getNumSamples());
     this->magnitudeRight = buffer.getMagnitude(1, 0, buffer.getNumSamples());
 
-
-     
     if (magnitudeLeft > 1)
         buffer.applyGain(0,0, buffer.getNumSamples(),1/magnitudeLeft);
     if (magnitudeRight > 1)
@@ -1117,6 +1117,15 @@ void TrioAudioProcessor::setState(ValueTree* state, bool normalized) {
     }
        */
 	// existing configuration -> update matrix
+
+	for (int i = 0; i < voices.size(); i++) {
+		voices[i]->setModAmount(0);
+		voices[i]->setModulator(modMatrix->getDummy());		
+	}
+
+	modMatrix->createDefaultConfig();
+
+
 	if (state->getChildWithName("modMatrix").isValid()) {
 
 		ValueTree v = state->getChildWithName("modMatrix");

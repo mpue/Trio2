@@ -17,9 +17,12 @@ ModMatrixConfig::ModMatrixConfig()
 
 ModMatrixConfig::~ModMatrixConfig()
 {
-	for (std::vector<ModSlotConfig*>::iterator it = slotConfigs.begin(); it != slotConfigs.end(); ++it) {
-		delete *it;
+	if (slotConfigs.size() > 0) {
+		for (std::vector<ModSlotConfig*>::iterator it = slotConfigs.begin(); it != slotConfigs.end(); ++it) {
+			delete *it;
+		}
 	}
+
 }
 
 void ModMatrixConfig::addConfig(ModSlotConfig* config)
